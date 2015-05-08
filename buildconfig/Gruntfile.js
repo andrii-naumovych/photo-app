@@ -1,0 +1,1 @@
+//TODO: make building of index.html file according to deps.json file
