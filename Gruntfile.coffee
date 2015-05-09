@@ -1,11 +1,14 @@
 #TODO: make building of index.html file according to deps.json file
 
-module.exports = (grunt) ->
-	gruntConf = require "./buildconfig/conf.json"
+gruntConf	= require "./buildconfig/grunt_conf.json"
+helpers		= require "./buildconfig/helpers.coffee"
 
+module.exports = (grunt) ->
+	helpers.replacer.replace ["./index_former.html"], { "STYLES": "styles_replaced","TITLE": "title_replaced" }
 	grunt.initConfig gruntConf
 
 	#Default tasks
+
 	grunt.loadNpmTasks "grunt-contrib-coffee"
 	grunt.loadNpmTasks "grunt-contrib-watch"
 	grunt.loadNpmTasks "grunt-newer"

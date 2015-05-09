@@ -1,17 +1,17 @@
 {
-	styles: {
-		,"css/bootstrap.css"
-	}
-	scripts: {
-		vendor: [
-			,"js/vendor/jquery/jquery.js"
+	"styles": [
+		"css/bootstrap.css"
+	],
+	"scripts": {
+		"vendor": [
+			 "js/vendor/jquery/jquery.js"
 			,"js/vendor/bootstrap/bootstrap.js"
 			,"js/vendor/underscore/underscore.js"
 			,"js/vendor/backbone/backbone.js"
 			,"js/vendor/marionette/marionette.js"
 		],
-		app: [
-			,"coffee/app.coffee"
+		"app": [
+			 "coffee/app.coffee"
 			,"coffee/main.coffee"
 		]
 	}
