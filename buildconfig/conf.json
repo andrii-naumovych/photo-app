@@ -1,0 +1,49 @@
+{
+	"coffee": {
+		"options": {
+			"bare": true
+		},
+		"scripts": {
+			"expand": true,
+			"cwd": "coffee/",
+			"src": ["**/*.coffee"],
+			"dest": "js/",
+			"ext": ".js"
+		}
+	},
+
+	"reload": {
+		"proxy": {
+			"host": "localhost"
+		}
+	},
+
+	"watch": {
+		"options": {
+			"livereload": true
+		},
+		"scripts": {
+			"files": [
+				"coffee/**/*.coffee",
+				"coffee/**/*.hbs"
+			],
+			"tasks": [
+				"newer:coffee",
+				"reload"
+			]
+		}
+	},
+
+	"copy": {
+		"templates": {
+			"files": [
+				{
+					"expand": true,
+					"cwd": "coffee/",
+					"src": ["**/*.hbs"],
+					"dest": "js/"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{
+  "name": "PhotoApp",
+  "version": "0.0.0",
+  "description": "Photo application which can work with some popular photoservices",
+  "main": "index.html",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-newer": "^1.1.0",
+    "grunt-reload": "^0.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andy-crystal/photo-app"
+  },
+  "keywords": [
+    "SPA",
+    "js",
+    "backbone",
+    "marionette",
+    "Photo"
+  ],
+  "author": "Andrew Naumovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andy-crystal/photo-app/issues"
+  },
+  "homepage": "https://github.com/andy-crystal/photo-app"
+}
