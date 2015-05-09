@@ -25,13 +25,16 @@ _private =
 
 API =
 	###
-	# files: ["coffee"]
+	# replace
+	#		files		: ["./index_former.html"]
+	#		criterion	: { "STYLES": "styles_replaced", "TITLE": "title_replaced" }
 	###
-	replace: (files, criterion) ->
+	replace: (options) ->
+		{ files, criterion } = options
 		_private.replaceInDir files, criterion
 
 module.exports = (config) ->
-	_private.placeholderTPL = config.placeholderTPL if config.placeholderTPL
+	_private.placeholderTPL = config.placeholderTPL if config.placeholderTPL?
 
 	API
 

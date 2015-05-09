@@ -1,10 +1,13 @@
-#TODO: make building of index.html file according to deps.json file
-
 gruntConf	= require "./buildconfig/grunt_conf.json"
-helpers		= require "./buildconfig/helpers.coffee"
+conf		= require "./buildconfig/conf.json"
+deps		= require "./buildconfig/deps.json"
+
+helpers		= require("./buildconfig/helpers.coffee")({
+	replacer:
+		placeholderTPL: conf.placeholderTPL
+})
 
 module.exports = (grunt) ->
-	helpers.replacer.replace ["./index_former.html"], { "STYLES": "styles_replaced","TITLE": "title_replaced" }
 	grunt.initConfig gruntConf
 
 	#Default tasks
@@ -17,6 +20,20 @@ module.exports = (grunt) ->
 
 	grunt.registerTask "copy-templates", "Copy hbs templates", ->
 		grunt.task.run "copy:templates"
+
+	grunt.registerTask "compose:tags", "Tags composing",->
+
+	grunt.registerTask "replace:index:deps", "Replacing index dependencies", ->
+		helpers.replacer.replace
+			files		: ["index.html"]
+			criterion	:
+				TITLE		: "Photo Application"
+				STYLES		: helpers.tagComposer.composeTags deps.styles
+				SCRIPTS		: helpers.tagComposer.composeTags deps.scripts
+
+	grunt.registerTask "build:index", "Build index.html", ->
+		grunt.task.run "copy:index"
+		grunt.task.run "replace:index:deps"
 
 	grunt.registerTask "build", "Build frontend application", ->
 		grunt.task.run "coffee"

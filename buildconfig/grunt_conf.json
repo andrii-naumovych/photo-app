@@ -35,13 +35,21 @@
 	},
 
 	"copy": {
+		"index": {
+			"files": [
+				{
+					"src": "index_former.html",
+					"dest": "index.html"
+				}
+			]
+		},
 		"templates": {
 			"files": [
 				{
-					 "expand"	: true
-					,"cwd"		: "coffee/"
-					,"src"		: ["**/*.hbs"]
-					,"dest"		: "js/"
+					"expand": true,
+					"cwd": "coffee/",
+					"src": ["**/*.hbs"],
+					"dest": "js/"
 				}
 			]
 		}
