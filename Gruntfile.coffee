@@ -35,9 +35,10 @@ module.exports = (grunt) ->
 		grunt.task.run "copy:index"
 		grunt.task.run "replace:index:deps"
 
-	grunt.registerTask "build", "Build frontend application", ->
+	grunt.registerTask "build:dev", "Build frontend application", ->
+		grunt.task.run "build:index"
 		grunt.task.run "coffee"
-		grunt.task.run "copy-templates"
+		grunt.task.run "copy:templates"
 
 	grunt.registerTask "default", "default task", ->
 		console.log "hello from default task!"

@@ -29,6 +29,7 @@
 			],
 			"tasks": [
 				 "newer:coffee"
+				,"newer:copy:templates"
 				,"reload"
 			]
 		}

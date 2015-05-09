@@ -14,10 +14,23 @@
 				,"js/vendor/underscore/underscore.js"
 				,"js/vendor/backbone/backbone.js"
 				,"js/vendor/marionette/marionette.js"
+				,"js/vendor/handlebars/handlebars.js"
 			]
 			,"app": [
-				"coffee/app.coffee",
-				"coffee/main.coffee"
+				 "coffee/config/marionette.coffee"
+				,"coffee/config/underscore.coffee"
+
+				,"coffee/app.coffee"
+
+				,"coffee/lib/views/item_view.coffee"
+				,"coffee/lib/views/layout_view.coffee"
+
+
+				,"coffee/modules/layout/main/layout_main_controller.coffee"
+				,"coffee/modules/layout/main/layout_main_view.coffee"
+				,"coffee/modules/layout/layout_module.coffee"
+
+				,"coffee/main.coffee"
 			]
 		}
 	}

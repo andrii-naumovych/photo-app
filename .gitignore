@@ -1,3 +1,5 @@
 .idea
 node_modules
 index.html
+js/*
+!js/vendor

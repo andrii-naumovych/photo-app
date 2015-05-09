@@ -1,0 +1,1 @@
+PhotoApp = new Marionette.Application
