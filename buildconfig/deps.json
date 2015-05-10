@@ -1,8 +1,10 @@
 {
 	"styles": {
-		 "tpl": "<link href=\"SRC\" />"
+		 "tpl": "<link href=\"SRC\" rel=\"stylesheet\" type=\"text/css\" />"
 		,"files": [
-			"css/bootstrap.css"
+			 "css/photoapp/opensans_all.css"
+			,"css/bootstrap/bootstrap.css"
+			,"css/photoapp/layout.css"
 		]
 	},
 	"scripts": {
@@ -17,18 +19,25 @@
 				,"js/vendor/handlebars/handlebars.js"
 			]
 			,"app": [
-				 "coffee/config/marionette.coffee"
-				,"coffee/config/underscore.coffee"
+				"coffee/config/underscore_conf.coffee"
 
 				,"coffee/app.coffee"
 
+				,"coffee/config/app_conf.coffee"
+				,"coffee/config/backbone_conf.coffee"
+				,"coffee/config/marionette_conf.coffee"
+
+				,"coffee/lib/views/view.coffee"
 				,"coffee/lib/views/item_view.coffee"
 				,"coffee/lib/views/layout_view.coffee"
-
 
 				,"coffee/modules/layout/main/layout_main_controller.coffee"
 				,"coffee/modules/layout/main/layout_main_view.coffee"
 				,"coffee/modules/layout/layout_module.coffee"
+
+				,"coffee/modules/auth/signin/auth_signin_controller.coffee"
+				,"coffee/modules/auth/signin/auth_signin_view.coffee"
+				,"coffee/modules/auth/auth_module.coffee"
 
 				,"coffee/main.coffee"
 			]

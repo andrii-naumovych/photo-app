@@ -5,16 +5,18 @@ PhotoApp.module "LayoutModule.Main", (Main, App, Backbone, Marionette, $, _) ->
 
 	class Main.AppLayout extends App.Views.LayoutView
 		template: "{m}/layout/main/layout_main"
+		containerRegionClass: "main-layout"
 		regions:
-			sidebarRegion: "#sidebar"
-			contentRegion: "#content"
+			headerRegion	: "#header"
+			sidebarRegion	: "#sidebar"
+			contentRegion	: "#content"
 
 	rootLayout = new Main.RootLayout
 	rootLayout.addRegion "bodyRegion", el: document.body
-	rootLayout.render()
+	do rootLayout.render
 
-	App.reqres.setHandler "get:rootLayout", ->
+	App.reqres.setHandler "get:layout:root", ->
 		rootLayout
 
-	App.reqres.setHandler "get:appLayout", (options) ->
+	App.reqres.setHandler "get:layout:app", (options) ->
 		new Main.AppLayout options

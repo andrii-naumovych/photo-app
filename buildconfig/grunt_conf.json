@@ -26,10 +26,13 @@
 			"files": [
 				 "coffee/**/*.coffee"
 				,"coffee/**/*.hbs"
+				,"css/**/**"
+				,"buildconfig/**/**"
 			],
 			"tasks": [
 				 "newer:coffee"
 				,"newer:copy:templates"
+				,"build:dev"
 				,"reload"
 			]
 		}

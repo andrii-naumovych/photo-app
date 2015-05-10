@@ -1,2 +1,4 @@
-root = PhotoApp.request "get:rootLayout"
-main = PhotoApp.request "get:appLayout"
+root = PhotoApp.request "get:layout:root"
+main = PhotoApp.request "get:layout:app"
+
+root.bodyRegion.show main

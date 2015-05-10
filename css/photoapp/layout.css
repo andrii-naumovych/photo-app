@@ -1,0 +1,35 @@
+body{
+	margin:0;
+	padding:100px 0 0 200px;
+}
+#header{
+	background-color: orange;
+	position:absolute;
+	top:0;
+	left:0;
+	width:500%;
+	height:100px;
+}
+#sidebar{
+	background-color: #0b97c4;
+	position:absolute;
+	top:100px;
+	left:0;
+	width:200px;
+	height:100%;
+}
+@media screen{
+	body #header{
+		position:fixed;
+	}
+	body #sidebar{
+		position:fixed;
+	}
+}
+* html body{
+	overflow:hidden;
+}
+* html #content{
+	height:100%;
+	overflow:auto;
+}

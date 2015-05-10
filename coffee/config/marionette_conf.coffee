@@ -1,8 +1,6 @@
 #TODO: implement below stuff for prod & dev envs
 _.extend Marionette.TemplateCache.prototype,
-	shortcuts:
-		m: "modules"
-		l: "lib"
+	shortcuts: PhotoApp.Config.tplShortcuts
 
 	normalizeTemplatePath: (templateId) ->
 		for i of @shortcuts
