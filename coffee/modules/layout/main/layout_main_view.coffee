@@ -18,5 +18,5 @@ PhotoApp.module "LayoutModule.Main", (Main, App, Backbone, Marionette, $, _) ->
 	App.reqres.setHandler "get:layout:root", ->
 		rootLayout
 
-	App.reqres.setHandler "get:layout:app", (options) ->
+	App.reqres.setHandler "inst:layout:app", (options) ->
 		new Main.AppLayout options

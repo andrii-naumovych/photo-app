@@ -30,6 +30,12 @@
 				,"coffee/lib/views/view.coffee"
 				,"coffee/lib/views/item_view.coffee"
 				,"coffee/lib/views/layout_view.coffee"
+				,"coffee/lib/views/collection_view.coffee"
+
+				,"coffee/lib/entities/model.coffee"
+				,"coffee/lib/entities/collection.coffee"
+
+				,"coffee/entities/photo.coffee"
 
 				,"coffee/modules/layout/main/layout_main_controller.coffee"
 				,"coffee/modules/layout/main/layout_main_view.coffee"
@@ -38,6 +44,10 @@
 				,"coffee/modules/auth/signin/auth_signin_controller.coffee"
 				,"coffee/modules/auth/signin/auth_signin_view.coffee"
 				,"coffee/modules/auth/auth_module.coffee"
+
+				,"coffee/modules/photo/show/photo_show_controller.coffee"
+				,"coffee/modules/photo/show/photo_show_view.coffee"
+				,"coffee/modules/photo/photo_module.coffee"
 
 				,"coffee/main.coffee"
 			]
