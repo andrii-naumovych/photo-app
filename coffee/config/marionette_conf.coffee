@@ -20,3 +20,19 @@ _.extend Marionette.TemplateCache.prototype,
 
 	compileTemplate: (rawTemplate, options) ->
 		return Handlebars.compile(rawTemplate);
+
+###
+# Override constructor in order to set "Controller's" method on Backbone.Router object
+# In order to let "queryRoutes" to work
+###
+_.extend Marionette.AppRouter::,
+	constructor: (options) ->
+		@options = options || {}
+
+		controller = @_getController()
+
+		Backbone.Router.apply _.extend(@, controller), arguments
+
+		appRoutes = @getOption "appRoutes"
+		@processAppRoutes controller, appRoutes
+		@on "route", @_processOnRoute, @

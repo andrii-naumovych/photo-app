@@ -1,8 +1,6 @@
 PhotoApp = new Marionette.Application
 
 PhotoApp.on "start", ->
-
-
 	root = PhotoApp.request "get:layout:root"
 	main = PhotoApp.request "inst:layout:app"
 
@@ -14,4 +12,5 @@ PhotoApp.on "start", ->
 	PhotoApp.reqres.setHandler "get:layout:view", (options) ->
 		main
 
+	_.log "app start"
 	Backbone.history.start()

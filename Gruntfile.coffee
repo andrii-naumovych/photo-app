@@ -41,4 +41,4 @@ module.exports = (grunt) ->
 		grunt.task.run "copy:templates"
 
 	grunt.registerTask "default", "default task", ->
-		console.log "hello from default task!"
+		grunt.task.run "build:dev"

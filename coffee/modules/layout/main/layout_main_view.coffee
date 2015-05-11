@@ -20,3 +20,6 @@ PhotoApp.module "LayoutModule.Main", (Main, App, Backbone, Marionette, $, _) ->
 
 	App.reqres.setHandler "inst:layout:app", (options) ->
 		new Main.AppLayout options
+
+	App.reqres.setHandler "default:region", ->
+		App.contentRegion

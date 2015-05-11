@@ -9,40 +9,28 @@ PhotoApp.module "PhotoModule.Show", (Show, App, Backbone, Marionette, $, _) ->
 			"click": "onToggleSelection"
 
 		onToggleSelection: ->
-			if @model.get "selected"
-				@triggerMethod "deselect"
-			else
-				@triggerMethod "select"
+			@triggerMethod "select", !@model.get "selected"
 
-		onSelect: ->
-			@$el.addClass "selected"
+		onSelect: (state) ->
+			@$el[["removeClass", "addClass"][+!!state]] "selected"
 
-			@trigger "selected"
-		onDeselect: ->
-			@$el.removeClass "selected"
-
-			@trigger "deselected"
+			@trigger "selected", state: state
 
 		onShow: ->
 			if @model.get "selected"
-				@triggerMethod "select"
+				@triggerMethod "select", true
 
 	class Show.PhotoItemsCollection extends App.Views.CollectionView
 		childView: Show.PhotoItem
 
-		onChildviewSelected: (childView) ->
-			@trigger "photo:selected", childView.model
-		onChildviewDeselected: (childView) ->
-			@trigger "photo:deselected", childView.model
+		onChildviewSelected: (childView, options = {}) ->
+			@trigger "photo:selected", _.extend options,
+				model	: childView.model
 
 		onPhotoSelect: (options) ->
-			{ model } = options
+			{ model, state } = options
+
+			state ?= true
 
 			photoView = @children.findByModel model
-			photoView.triggerMethod "select"
-
-		onPhotoDeselect: (options) ->
-			{ model } = options
-
-			photoView = @children.findByModel model
-			photoView.triggerMethod "deselect"
+			photoView.triggerMethod "select", state

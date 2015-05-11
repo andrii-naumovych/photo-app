@@ -15,6 +15,7 @@
 				,"js/vendor/bootstrap/bootstrap.js"
 				,"js/vendor/underscore/underscore.js"
 				,"js/vendor/backbone/backbone.js"
+				,"js/vendor/backbone/backbone.queryRouter.js"
 				,"js/vendor/marionette/marionette.js"
 				,"js/vendor/handlebars/handlebars.js"
 			]
@@ -34,6 +35,9 @@
 
 				,"coffee/lib/entities/model.coffee"
 				,"coffee/lib/entities/collection.coffee"
+
+				,"coffee/lib/util/registry.coffee"
+				,"coffee/lib/controllers/app_controller.coffee"
 
 				,"coffee/entities/photo.coffee"
 
