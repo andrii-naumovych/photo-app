@@ -17,6 +17,7 @@
 				,"js/vendor/backbone/backbone.js"
 				,"js/vendor/backbone/backbone.queryRouter.js"
 				,"js/vendor/marionette/marionette.js"
+
 				,"js/vendor/handlebars/handlebars.js"
 			]
 			,"app": [
@@ -39,6 +40,7 @@
 				,"coffee/lib/util/registry.coffee"
 				,"coffee/lib/controllers/app_controller.coffee"
 
+				,"coffee/entities/auth.coffee"
 				,"coffee/entities/photo.coffee"
 
 				,"coffee/modules/layout/main/layout_main_controller.coffee"
