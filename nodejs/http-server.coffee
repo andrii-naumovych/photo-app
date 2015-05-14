@@ -2,6 +2,7 @@ oauth = require "./oauth.coffee"
 http = require "http"
 dispatcher = require "httpdispatcher"
 fs = require "fs"
+util = require "util"
 
 PORT = 8080
 
@@ -16,17 +17,16 @@ dispatcher.onGet "/oauth-url", (req, resp) ->
 		"Content-Type": "application/json"
 		"Access-Control-Allow-Origin": "http://photoapp.local"
 
-	oauth.requestForAuthURL().then (authUrl) ->
-		resp.end JSON.stringify authUrl: authUrl
+	oauth.requestForAuthURL().then (data) ->
+		resp.end JSON.stringify data
 
 
 dispatcher.onGet "/oauth-get-access", (req, resp) ->
-	fs.writeFile "code.json", JSON.stringify req
 	resp.writeHead 200,
 		"Content-Type": "application/json"
 		"Access-Control-Allow-Origin": "http://photoapp.local"
 
-	oauth.requestForAccessToken().then (tokenData) ->
+	oauth.requestForAccessToken(req.params).then (tokenData) ->
 		resp.end JSON.stringify tokenData
 server = http.createServer handleRequest
 

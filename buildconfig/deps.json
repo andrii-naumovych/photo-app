@@ -26,6 +26,7 @@
 				,"coffee/app.coffee"
 
 				,"coffee/config/app_conf.coffee"
+				,"coffee/config/api.coffee"
 				,"coffee/config/backbone_conf.coffee"
 				,"coffee/config/marionette_conf.coffee"
 
